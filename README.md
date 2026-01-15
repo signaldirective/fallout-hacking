@@ -35,5 +35,4 @@ So to start the game in the easiest difficulty level you would type: ``python fa
 
 
 
-**2026 - Ro Black**# fallout-hacking
-# fallout-hacking
+**2026 - Ro Black**
