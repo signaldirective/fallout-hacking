@@ -12,53 +12,114 @@ from typing import List, Tuple, Optional, Set
 
 # Word lists for different lengths
 WORD_LISTS = {
-    4: ['TEST', 'DATA', 'CODE', 'NODE', 'FILE', 'DISK', 'BOOT', 'CORE', 'LINK', 'LOAD',
-         'KEYS', 'LOCK', 'USER', 'PASS', 'ROOT', 'HOST', 'PORT', 'PATH', 'NAME', 'TYPE'],
-    5: ['START', 'RESET', 'LOGIN', 'LOGOUT', 'ADMIN', 'SUPER', 'POWER', 'SYSTEM', 'MEMORY',
-         'DRIVE', 'FOLDER', 'FILES', 'PRINT', 'INPUT', 'OUTPUT', 'SCREEN', 'MOUSE', 'KEYBOARD',
-         'SPEAKER', 'PHONE', 'TABLE', 'CHAIR', 'DESK', 'WINDOW', 'DOOR', 'LIGHT', 'POWER',
-         'WATER', 'FIRE', 'EARTH', 'WIND', 'SPACE', 'TIME', 'CLOCK', 'WATCH', 'TIMER'],
-    6: ['SERVER', 'CLIENT', 'ROUTER', 'SWITCH', 'MODEM', 'PROXY', 'FIREWALL', 'NETWORK',
-         'WIRELESS', 'BLUETOOTH', 'ETHERNET', 'BROWSER', 'CHROME', 'FIREFOX', 'SAFARI',
-         'OPERA', 'EDGE', 'PYTHON', 'JAVA', 'RUBY', 'GOLANG', 'RUST', 'SWIFT', 'KOTLIN',
-         'SCRIPT', 'SHELL', 'BASH', 'ZSH', 'FISH', 'TERMINAL', 'CONSOLE', 'COMMAND'],
-    7: ['PROGRAM', 'SOFTWARE', 'HARDWARE', 'COMPUTER', 'MONITOR', 'KEYBOARD', 'PRINTER',
-         'SCANNER', 'SPEAKER', 'HEADSET', 'WEBCAM', 'CAMERA', 'MICROPHONE', 'PROJECTOR',
-         'DISPLAY', 'STORAGE', 'DATABASE', 'BACKEND', 'FRONTEND', 'FULLSTACK', 'DEVELOPER',
-         'ENGINEER', 'MANAGER', 'DIRECTOR', 'EXECUTIVE', 'PRESIDENT', 'OFFICER', 'SOLDIER'],
-    8: ['TERMINAL', 'KEYBOARD', 'MONITOR', 'PROCESSOR', 'MAINFRAME', 'SUPERCOMPUTER',
-         'WORKSTATION', 'NOTEBOOK', 'LAPTOP', 'TABLET', 'SMARTPHONE', 'CELLPHONE', 'TELEPHONE',
-         'FACSIMILE', 'TELETYPE', 'TYPEWRITER', 'CALCULATOR', 'SPREADSHEET', 'WORDPROCESSOR',
-         'DATABASE', 'SPREADSHEET', 'PRESENTATION', 'GRAPHICAL', 'INTERFACE', 'PROTOCOL'],
-    9: ['MAINFRAME', 'WORKSTATION', 'SUPERCOMPUTER', 'MICROPROCESSOR', 'TRANSMITTER',
-         'RECEIVER', 'ANTENNA', 'SATELLITE', 'BROADCAST', 'TELEVISION', 'RADIO', 'TELEGRAPH',
-         'TELEPHONE', 'CELLPHONE', 'SMARTPHONE', 'TABLET', 'NOTEBOOK', 'LAPTOP', 'COMPUTER',
-         'PERIPHERAL', 'ACCESSORY', 'COMPONENT', 'ELECTRONIC', 'DIGITAL', 'ANALOG'],
-    10: ['MAINFRAMES', 'WORKSTATIONS', 'SUPERCOMPUTERS', 'MICROPROCESSORS', 'TRANSMITTERS',
-          'RECEIVERS', 'ANTENNAS', 'SATELLITES', 'BROADCASTS', 'TELEVISIONS', 'RADIOS',
-          'TELEGRAPHS', 'TELEPHONES', 'CELLPHONES', 'SMARTPHONES', 'TABLETS', 'NOTEBOOKS',
-          'LAPTOPS', 'COMPUTERS', 'PERIPHERALS', 'ACCESSORIES', 'COMPONENTS', 'ELECTRONICS'],
-    11: ['MICROPROCESSOR', 'MAINFRAME', 'WORKSTATION', 'SUPERCOMPUTER', 'TRANSMITTER',
-          'RECEIVER', 'ANTENNA', 'SATELLITE', 'BROADCAST', 'TELEVISION', 'RADIO', 'TELEGRAPH',
-          'TELEPHONE', 'CELLPHONE', 'SMARTPHONE', 'TABLET', 'NOTEBOOK', 'LAPTOP', 'COMPUTER',
-          'PERIPHERAL', 'ACCESSORY', 'COMPONENT', 'ELECTRONIC', 'DIGITAL', 'ANALOG'],
-    12: ['MICROPROCESSORS', 'MAINFRAMES', 'WORKSTATIONS', 'SUPERCOMPUTERS', 'TRANSMITTERS',
-          'RECEIVERS', 'ANTENNAS', 'SATELLITES', 'BROADCASTS', 'TELEVISIONS', 'RADIOS',
-          'TELEGRAPHS', 'TELEPHONES', 'CELLPHONES', 'SMARTPHONES', 'TABLETS', 'NOTEBOOKS',
-          'LAPTOPS', 'COMPUTERS', 'PERIPHERALS', 'ACCESSORIES', 'COMPONENTS', 'ELECTRONICS'],
-    13: ['MICROPROCESSORS', 'MAINFRAMES', 'WORKSTATIONS', 'SUPERCOMPUTERS', 'TRANSMITTERS',
-          'RECEIVERS', 'ANTENNAS', 'SATELLITES', 'BROADCASTS', 'TELEVISIONS', 'RADIOS',
-          'TELEGRAPHS', 'TELEPHONES', 'CELLPHONES', 'SMARTPHONES', 'TABLETS', 'NOTEBOOKS',
-          'LAPTOPS', 'COMPUTERS', 'PERIPHERALS', 'ACCESSORIES', 'COMPONENTS', 'ELECTRONICS'],
-    14: ['MICROPROCESSORS', 'MAINFRAMES', 'WORKSTATIONS', 'SUPERCOMPUTERS', 'TRANSMITTERS',
-          'RECEIVERS', 'ANTENNAS', 'SATELLITES', 'BROADCASTS', 'TELEVISIONS', 'RADIOS',
-          'TELEGRAPHS', 'TELEPHONES', 'CELLPHONES', 'SMARTPHONES', 'TABLETS', 'NOTEBOOKS',
-          'LAPTOPS', 'COMPUTERS', 'PERIPHERALS', 'ACCESSORIES', 'COMPONENTS', 'ELECTRONICS'],
-    15: ['MICROPROCESSORS', 'MAINFRAMES', 'WORKSTATIONS', 'SUPERCOMPUTERS', 'TRANSMITTERS',
-          'RECEIVERS', 'ANTENNAS', 'SATELLITES', 'BROADCASTS', 'TELEVISIONS', 'RADIOS',
-          'TELEGRAPHS', 'TELEPHONES', 'CELLPHONES', 'SMARTPHONES', 'TABLETS', 'NOTEBOOKS',
-          'LAPTOPS', 'COMPUTERS', 'PERIPHERALS', 'ACCESSORIES', 'COMPONENTS', 'ELECTRONICS']
+    4: [
+        'BOOT', 'CORE', 'DATA', 'DISK', 'FILE', 'HOST', 'KEYS', 'LINK', 'LOAD', 'LOCK',
+        'NODE', 'PATH', 'PORT', 'ROOT', 'SAVE', 'SYNC', 'TASK', 'TERM', 'TIME', 'USER'
+    ],
+
+    5: [
+        'ADMIN', 'ALERT', 'ARRAY', 'CACHE', 'CHAIR', 'CLOCK', 'DEBUG', 'DESKS', 'DRIVE',
+        'ERROR', 'FILES', 'INPUT', 'LOGIN', 'LOGIC', 'LOGOUT', 'MOUSE', 'POWER', 'PRINT',
+        'RESET', 'SCREEN', 'START', 'TABLE', 'TIMER', 'TOKEN', 'TOOLS'
+    ],
+
+    6: [
+        'ACCESS', 'BACKUP', 'BINARY', 'BUTTON', 'CLIENT', 'CONFIG', 'CURSOR', 'DEVICE',
+        'EDITOR', 'EXPORT', 'FILTER', 'FOLDER', 'FORMAT', 'IMPORT', 'MEMORY', 'MODULE',
+        'OUTPUT', 'PYTHON', 'SCRIPT', 'SERVER', 'STATUS', 'SWITCH', 'SYNTAX', 'SYSTEM'
+    ],
+
+    7: [
+        'ADDRESS', 'ARCHIVE', 'BATTERY', 'COMMAND', 'COMPILE', 'CONSOLE', 'CONTROL',
+        'DEFAULT', 'DISPLAY', 'EXECUTE', 'FIRMWARE', 'FUNCTION', 'HARDWARE', 'KEYBOARD',
+        'MONITOR', 'NETWORK', 'PROCESS', 'PROGRAM', 'PROTOCOL', 'RESOURCE'
+    ],
+
+    8: [
+        'ACTIVATE', 'ADAPTERS', 'ARGUMENT', 'DATABASE', 'DOWNLOAD', 'EMULATOR',
+        'ENCRYPTS', 'FIREWALL', 'FRAMEWORK', 'INTERFACE', 'KEYSTROK', 'NOTEBOOK',
+        'OPERATOR', 'PIPELINE', 'PLATFORM', 'RENDERER', 'SCHEDULR', 'TERMINAL'
+    ],
+
+    9: [
+        'ALGORITHM', 'AUTHORITY', 'AUTOMATED', 'BANDWIDTH', 'BOOTSTRAP',
+        'COMPRESSION', 'CONFIGURE', 'CONTROLLER', 'DECRYPTED', 'DEPENDENT',
+        'FRAMEWORK', 'HYPERVIS', 'INITIALIZ', 'PERMISSION', 'PROCESSOR'
+    ],
+
+    10: [
+        'APPLICATION', 'AUTHENTIC', 'BACKUPFILE', 'CONFIGURED', 'CONNECTION',
+        'CONTROLLER', 'DEBUGGERX', 'DEVELOPERS', 'DOWNLOADED', 'ENVIRONMENT',
+        'MAINTENANC', 'MULTITHRE', 'OPERATIONS', 'PERMISSIONS', 'VALIDATION'
+    ],
+
+    11: [
+        'ACCELERATOR', 'AUTHENTICAT', 'CONFIGURATION', 'CONTINUATION',
+        'DECOMPRESSION', 'IMPLEMENTER', 'INITIALIZATION',
+        'INTERPRETERS', 'MAINTAINERS', 'MULTIPLEXING'
+    ],
+
+  12: [
+        'AUTHENTICATE',   # 12
+        'CONFIGURABLE',   # 12
+        'CONSTRUCTORS',   # 12
+        'DEVELOPMENT',    # 12
+        'ENCAPSULATE',    # 12
+        'INITIALIZERS',   # 12
+        'MULTITHREAD',    # 12
+        'ORCHESTRATE',    # 12
+        'PERFORMANCE',    # 12
+        'REFACTORING',    # 12
+        'SERIALIZERS',    # 12
+        'TRANSACTIONS'   # 12
+    ],
+
+    13: [
+        'AUTHORIZATION',  # 13
+        'DETERMINISTIC',  # 13
+        'IMPLEMENTATION',# 13
+        'INITIALIZATION',# 13
+        'INSTRUMENTATION',#13
+        'MULTITHREADED', # 13
+        'OPTIMIZATION',  # 13
+        'CONFIGURATION', # 13
+        'VIRTUALIZATION',# 13
+        'AUTHENTICATED', # 13
+        'ENCAPSULATION', # 13
+        'SERIALIZATION'  # 13
+    ],
+
+    14: [
+        'AUTHENTICATION', # 14
+        'CHARACTERISTIC', # 14
+        'CONFIGURATIONS', # 14
+        'DECOMPRESSION', # 14
+        'IMPLEMENTATIONS',#14
+        'INITIALIZATIONS',#14
+        'MULTIPROCESSING',#14
+        'VIRTUALMACHINE', # 14
+        'AUTHORIZATIONS', # 14
+        'PARALLELIZATION',#14
+        'SERIALIZATIONS', # 14
+        'TRANSMISSIONS'   # 14
+    ],
+
+    15: [
+        'AUTHENTICATIONS', # 15
+        'CHARACTERISTICS', # 15
+        'CONFIGURABILITY', # 15
+        'IMPLEMENTATIONAL',# 15
+        'MULTIPROCESSORS', # 15
+        'INITIALIZATIONSS',# 15 (intentionally double-S, Fallout-style)
+        'PARALLELPROCESS', # 15
+        'VIRTUALMACHINES', # 15
+        'AUTHORIZINGKEY',  # 15
+        'SERIALIZINGDATA', # 15
+        'TRANSACTIONLOG',  # 15
+        'ENCRYPTIONBLOCK'  # 15
+    ]
 }
+
 
 # Special characters for bracket sequences
 BRACKET_CHARS = '!@#$%^&*()_+-=[]{}|;:,.<>?/~`'
@@ -91,7 +152,6 @@ class HackingGame:
     def __init__(self, difficulty: int):
         self.difficulty = difficulty
         self.config = DIFFICULTY_CONFIG[difficulty]
-        self.password_length = random.randint(self.config['min_len'], self.config['max_len'])
         self.attempts_left = self.config['attempts']
         self.max_attempts = self.config['attempts']
         self.words = self._generate_words()
@@ -109,15 +169,24 @@ class HackingGame:
         self.replenish_bracket_used = False
 
     def _generate_words(self) -> List[str]:
-        word_list = WORD_LISTS.get(self.password_length, WORD_LISTS[4])
         word_count = self.config['word_count']
-        available_words = [w for w in word_list if len(w) == self.password_length]
+        available_words = []
         
+        # Get all word lengths for this difficulty
+        min_len = self.config['min_len']
+        max_len = self.config['max_len']
+        
+        # Collect words from all appropriate length lists
+        for length in range(min_len, max_len + 1):
+            if length in WORD_LISTS:
+                available_words.extend([w.upper() for w in WORD_LISTS[length]])
+        
+        # If still not enough words, add gibberish
         if len(available_words) < word_count:
-            available_words = [w.upper() for w in available_words]
             while len(available_words) < word_count:
+                gibberish_length = random.randint(min_len, max_len)
                 available_words.append(''.join(random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') 
-                                              for _ in range(self.password_length)))
+                                              for _ in range(gibberish_length)))
         
         return random.sample(available_words, min(word_count, len(available_words)))
 
@@ -354,30 +423,26 @@ class HackingGame:
             return False
         
         matches = self.count_matches(word)
-        
-        self.last_guess = word
         self.last_match_count = matches
         self.attempts_left -= 1
         
-        if matches == self.password_length:
+        if matches == len(self.password):
             self.output_history.append("ACCESS GRANTED")
-            # Keep only last 17 outputs
-            self.output_history = self.output_history[-17:]
             self.won = True
             self.game_over = True
-            return True
+        else:
+            self.output_history.append(word)
+            self.output_history.append("Entry denied")
+            self.output_history.append(f"{matches}/{len(self.password)} correct")
+            
+            if self.attempts_left <= 0 and not self.config['retry']:
+                self.locked_out = True
+                self.game_over = True
         
-        self.output_history.append(word)
-        self.output_history.append("Entry denied")
-        self.output_history.append(f"{matches}/{self.password_length} correct")
         # Keep only last 17 outputs
         self.output_history = self.output_history[-17:]
         
-        if self.attempts_left <= 0 and not self.config['retry']:
-            self.locked_out = True
-            self.game_over = True
-        
-        return False
+        return matches == len(self.password)
 
     def activate_bracket(self) -> Tuple[bool, str]:
         if self.game_over or self.locked_out:
