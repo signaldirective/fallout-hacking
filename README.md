@@ -33,6 +33,7 @@ Without arguments, it will display the help file:
 
 So to start the game in the easiest difficulty level you would type: ``python fallout_hacking.py --difficulty=1`` or ``python fallout_hacking.py -d1`` and to start it in the hardest difficulty, you would type ``python fallout_hacking.py --difficulty=5`` or ``python fallout_hacking.py -d5``
 
+## [Tip me on Ko-Fi!](https://ko-fi.com/signaldirective)   
 
 
 **2026 - Ro Black**
