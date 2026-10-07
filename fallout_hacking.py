@@ -13,112 +13,130 @@ from typing import List, Tuple, Optional, Set
 # Word lists for different lengths
 WORD_LISTS = {
     4: [
-        'BOOT', 'CORE', 'DATA', 'DISK', 'FILE', 'HOST', 'KEYS', 'LINK', 'LOAD', 'LOCK',
-        'NODE', 'PATH', 'PORT', 'ROOT', 'SAVE', 'SYNC', 'TASK', 'TERM', 'TIME', 'USER'
+        'BOOT', 'BYTE', 'CHIP', 'CODE', 'CORE', 'DATA', 'DISK', 'FILE', 'FUSE', 'GATE',
+        'HOST', 'JUNK', 'KEYS', 'LINK', 'LOAD', 'LOCK', 'MAIN', 'MODE', 'NODE', 'OPEN',
+        'PATH', 'PING', 'PORT', 'READ', 'ROOT', 'SAVE', 'SCAN', 'SLOT', 'TASK', 'TERM',
+        'TIME', 'USER', 'VOLT', 'WIRE', 'ZONE'
     ],
-
     5: [
-        'ADMIN', 'ALERT', 'ARRAY', 'CACHE', 'CHAIR', 'CLOCK', 'DEBUG', 'DESKS', 'DRIVE',
-        'ERROR', 'FILES', 'INPUT', 'LOGIN', 'LOGIC', 'LOGOUT', 'MOUSE', 'POWER', 'PRINT',
-        'RESET', 'SCREEN', 'START', 'TABLE', 'TIMER', 'TOKEN', 'TOOLS'
+        'ADMIT', 'ALARM', 'ALERT', 'ARRAY', 'AUDIO', 'BOARD', 'CABLE', 'CACHE', 'CHAIR',
+        'CHIPS', 'CLEAR', 'CLOCK', 'CRASH', 'DEBUG', 'DELTA', 'DESKS', 'DIGIT', 'DRIVE',
+        'ERROR', 'ENTRY', 'FILES', 'FLASH', 'GAMES', 'GUARD', 'IMAGE', 'INDEX', 'INPUT',
+        'LASER', 'LEVEL', 'LOGIN', 'LOGIC', 'MATCH', 'METAL', 'MODEL', 'MOUSE', 'PANEL',
+        'PIXEL', 'POWER', 'PRINT', 'RADIO', 'RANGE', 'RESET', 'REPLY', 'ROBOT', 'SPACE',
+        'START', 'STATE', 'STEEL', 'TABLE', 'TIMER', 'TITLE', 'TOKEN', 'TOOLS', 'VAULT',
+        'VIDEO', 'VIRUS'
     ],
-
     6: [
-        'ACCESS', 'BACKUP', 'BINARY', 'BUTTON', 'CLIENT', 'CONFIG', 'CURSOR', 'DEVICE',
-        'EDITOR', 'EXPORT', 'FILTER', 'FOLDER', 'FORMAT', 'IMPORT', 'MEMORY', 'MODULE',
-        'OUTPUT', 'PYTHON', 'SCRIPT', 'SERVER', 'STATUS', 'SWITCH', 'SYNTAX', 'SYSTEM'
+        'ACCESS', 'ATOMIC', 'BACKUP', 'BINARY', 'BUFFER', 'BUTTON', 'CIPHER', 'CLIENT',
+        'CODING', 'CURSOR', 'DECODE', 'DELETE', 'DEVICE', 'DIRECT', 'DOMAIN', 'DRIVER',
+        'EDITOR', 'ENCODE', 'ENERGY', 'ENGINE', 'EXPORT', 'FAILED', 'FILTER', 'FOLDER',
+        'FORMAT', 'FUSION', 'HACKER', 'IMPORT', 'KERNEL', 'LAUNCH', 'MATRIX', 'MEMORY',
+        'MODULE', 'OPTION', 'OUTPUT', 'PERMIT', 'PROMPT', 'PYTHON', 'RECORD', 'REMOTE',
+        'REPAIR', 'RESULT', 'SCRIPT', 'SEARCH', 'SENSOR', 'SERVER', 'STATUS', 'SWITCH',
+        'SYNTAX', 'SYSTEM', 'TARGET', 'THREAD', 'UPDATE', 'VERIFY', 'WIZARD'
     ],
-
     7: [
-        'ADDRESS', 'ARCHIVE', 'BATTERY', 'COMMAND', 'COMPILE', 'CONSOLE', 'CONTROL',
-        'DEFAULT', 'DISPLAY', 'EXECUTE', 'FIRMWARE', 'FUNCTION', 'HARDWARE', 'KEYBOARD',
-        'MONITOR', 'NETWORK', 'PROCESS', 'PROGRAM', 'PROTOCOL', 'RESOURCE'
+        'ACCOUNT', 'ADDRESS', 'ANALYST', 'ANALYZE', 'ARCHIVE', 'BATTERY', 'CAPTURE',
+        'CIRCUIT', 'CLUSTER', 'COMMAND', 'COMPARE', 'COMPILE', 'CONSOLE', 'CONNECT',
+        'CONTROL', 'DECIMAL', 'DECODER', 'DEFAULT', 'DESTROY', 'DIGITAL', 'DISPLAY',
+        'DIVIDER', 'ELEMENT', 'FAILURE', 'FACTORY', 'FEATURE', 'FOREIGN', 'GENERAL',
+        'HOSTILE', 'IGNORED', 'INSTALL', 'INVALID', 'MACHINE', 'MESSAGE', 'MISSION',
+        'MONITOR', 'NETWORK', 'PATTERN', 'PLAYERS', 'PROCESS', 'PROGRAM', 'RECEIVE',
+        'RECOVER', 'REPLACE', 'ROUTINE', 'SCANNER', 'SCIENCE', 'STORAGE', 'SUCCESS'
     ],
-
     8: [
-        'ACTIVATE', 'ADAPTERS', 'ARGUMENT', 'DATABASE', 'DOWNLOAD', 'EMULATOR',
-        'ENCRYPTS', 'FIREWALL', 'FRAMEWORK', 'INTERFACE', 'KEYSTROK', 'NOTEBOOK',
-        'OPERATOR', 'PIPELINE', 'PLATFORM', 'RENDERER', 'SCHEDULR', 'TERMINAL'
+        'ABSOLUTE', 'ACTIVATE', 'ADAPTERS', 'ANALYSIS', 'ANIMATED', 'APPROACH', 'ARGUMENT',
+        'ASSEMBLY', 'ASSIGNED', 'BOUNDARY', 'BUILDING', 'CALENDAR', 'CAPACITY', 'COMMANDS',
+        'COMPUTER', 'CONTINUE', 'DATABASE', 'DOCUMENT', 'DOWNLOAD', 'EMULATOR', 'ENCRYPTS',
+        'ENDPOINT', 'ESTIMATE', 'EVIDENCE', 'EXCHANGE', 'EXPLICIT', 'EXPONENT', 'EXTERNAL',
+        'FEEDBACK', 'FIREWALL', 'FLEXIBLE', 'GRAPHICS', 'HARDWARE', 'IDENTIFY', 'INDUSTRY',
+        'INFINITE', 'KEYSTONE', 'LANGUAGE', 'LOCATION', 'MAGNETIC', 'MANIFEST', 'NOTEBOOK',
+        'OBSERVER', 'OFFICIAL', 'OPERATOR', 'OVERLOAD', 'PARALLEL', 'PASSWORD', 'PIPELINE',
+        'PLATFORM', 'POSSIBLE', 'PRESENCE', 'PRESSURE', 'PROTOCOL', 'RECORDER', 'REGISTER',
+        'RELIABLE', 'RENDERER', 'SECURITY', 'SEQUENCE', 'SOFTWARE', 'SPECIFIC', 'STANDARD',
+        'STRANGER', 'STRATEGY', 'TERMINAL', 'TRANSFER', 'TRAVERSE', 'TRIANGLE', 'TUTORIAL',
+        'UNIVERSE'
     ],
-
     9: [
-        'ALGORITHM', 'AUTHORITY', 'AUTOMATED', 'BANDWIDTH', 'BOOTSTRAP',
-        'COMPRESSION', 'CONFIGURE', 'CONTROLLER', 'DECRYPTED', 'DEPENDENT',
-        'FRAMEWORK', 'HYPERVIS', 'INITIALIZ', 'PERMISSION', 'PROCESSOR'
+        'ALGORITHM', 'AUTOMATED', 'AUTOMATIC', 'AUTHORITY', 'BANDWIDTH', 'BOOTSTRAP',
+        'CALCULATE', 'COMMANDER', 'CONFIGURE', 'DECRYPTED', 'DEPENDENT', 'DETECTORS',
+        'DISCOVERY', 'DISKETTES', 'ELECTRONS', 'EXECUTION', 'EXPANSION', 'EXPLOSION',
+        'FRAMEWORK', 'FREQUENCY', 'GENERATOR', 'HARDENING', 'INTERCEPT', 'INVENTORY',
+        'ISOLATION', 'KNOWLEDGE', 'MECHANISM', 'NAVIGATOR', 'OPERATION', 'POTENTIAL',
+        'PREDICTOR', 'PROCESSOR', 'REFERENCE', 'REGULATOR', 'REMOVABLE', 'RETRIEVAL',
+        'SIGNATURE', 'SIMULATOR', 'SITUATION', 'TREATMENT', 'UNIVERSAL', 'VALIDATED'
     ],
-
     10: [
-        'APPLICATION', 'AUTHENTIC', 'BACKUPFILE', 'CONFIGURED', 'CONNECTION',
-        'CONTROLLER', 'DEBUGGERX', 'DEVELOPERS', 'DOWNLOADED', 'ENVIRONMENT',
-        'MAINTENANC', 'MULTITHRE', 'OPERATIONS', 'PERMISSIONS', 'VALIDATION'
+        'ADVENTURES', 'ALGORITHMS', 'ANNOTATION', 'AUTOMATION', 'BIOLOGICAL', 'CALIBRATED',
+        'CLASSIFIED', 'COLLECTION', 'COMPLEXITY', 'CONFIGURED', 'CONNECTION', 'CORRUPTION',
+        'DEACTIVATE', 'DECORATION', 'DECRYPTION', 'DELIVERING', 'DEVELOPERS', 'DIAGNOSTIC',
+        'DISCONNECT', 'DISCOVERED', 'DOWNLOADED', 'ELECTRONIC', 'ENCOUNTERS', 'ENGINEERED',
+        'ESTIMATING', 'EXPERIENCE', 'FOUNDATION', 'GUIDELINES', 'HISTORICAL', 'INCREASING',
+        'ITERATIONS', 'MAINTAINED', 'MECHANICAL', 'NAVIGATION', 'OVERLOADED', 'PERIPHERAL',
+        'PROCESSING', 'PRODUCTION', 'PROTECTIVE', 'RECOGNIZED', 'RESEARCHER', 'RESISTANCE',
+        'SIMULATION', 'TECHNICIAN', 'TERMINATED', 'VALIDATION', 'WASTELANDS'
     ],
-
     11: [
-        'ACCELERATOR', 'AUTHENTICAT', 'CONFIGURATION', 'CONTINUATION',
-        'DECOMPRESSION', 'IMPLEMENTER', 'INITIALIZATION',
-        'INTERPRETERS', 'MAINTAINERS', 'MULTIPLEXING'
+        'ACCELERATOR', 'ACQUISITION', 'APPLICATION', 'APPROACHING', 'ASSIGNMENTS',
+        'CALCULATING', 'COLLECTABLE', 'CONDITIONED', 'CONNECTIONS', 'CONTROLLERS',
+        'DEACTIVATED', 'DEFINITIONS', 'DISCONNECTS', 'DISCOVERING', 'ELECTRONICS',
+        'ENGINEERING', 'ENVIRONMENT', 'IDENTIFIERS', 'INDEPENDENT', 'INFORMATION',
+        'MANIPULATED', 'MEASUREMENT', 'PERFORMANCE', 'PERMISSIONS', 'PERSISTENCE',
+        'PROGRAMMING', 'RELIABILITY', 'SUBSTATIONS', 'TEMPERATURE', 'TRANSACTION',
+        'UNDERGROUND', 'UNIVERSALLY'
     ],
-
-  12: [
-        'AUTHENTICATE',   # 12
-        'CONFIGURABLE',   # 12
-        'CONSTRUCTORS',   # 12
-        'DEVELOPMENT',    # 12
-        'ENCAPSULATE',    # 12
-        'INITIALIZERS',   # 12
-        'MULTITHREAD',    # 12
-        'ORCHESTRATE',    # 12
-        'PERFORMANCE',    # 12
-        'REFACTORING',    # 12
-        'SERIALIZERS',    # 12
-        'TRANSACTIONS'   # 12
+    12: [
+        'AUTHENTICATE', 'CONGRATULATE', 'ACHIEVEMENTS', 'ACCELERATORS', 'APPROXIMATED',
+        'ARCHITECTURE', 'CAPITALIZING', 'CONFIGURABLE', 'CONSTRUCTORS', 'CONSOLIDATED',
+        'CONTAMINATED', 'CONTRIBUTION', 'CONVENTIONAL', 'DEPARTMENTAL', 'DIFFERENTIAL',
+        'DISAPPEARING', 'DISTRIBUTION', 'ELECTRICALLY', 'EXPERIMENTAL', 'ILLUSTRATION',
+        'INDEPENDENCE', 'INSTALLATION', 'INTERACTIONS', 'INTERMEDIATE', 'INTRODUCTION',
+        'MANIPULATION', 'MULTIPLICITY', 'PARTICIPANTS', 'PERPETUATION', 'PROGRESSIONS',
+        'REALLOCATION', 'RECOLLECTION', 'REPRODUCIBLE', 'SIMULTANEOUS', 'SUBSTITUTION',
+        'MULTITASKING', 'TRANSACTIONS', 'UNAUTHORIZED', 'UNIDENTIFIED'
     ],
-
     13: [
-        'AUTHORIZATION',  # 13
-        'DETERMINISTIC',  # 13
-        'IMPLEMENTATION',# 13
-        'INITIALIZATION',# 13
-        'INSTRUMENTATION',#13
-        'MULTITHREADED', # 13
-        'OPTIMIZATION',  # 13
-        'CONFIGURATION', # 13
-        'VIRTUALIZATION',# 13
-        'AUTHENTICATED', # 13
-        'ENCAPSULATION', # 13
-        'SERIALIZATION'  # 13
+        'AUTHENTICATED', 'AUTHENTICATOR', 'AUTHORIZATION', 'COMMUNICATION', 'COMPATIBILITY',
+        'DETERMINISTIC', 'ENCAPSULATION', 'EXTRAORDINARY', 'FUNCTIONALITY',
+        'INDEPENDENTLY', 'INSTALLATIONS', 'MULTITHREADED', 'PARTICIPATION',
+        'SERIALIZATION', 'SPECIFICATION',
+        'VULNERABILITY'
     ],
-
     14: [
-        'AUTHENTICATION', # 14
-        'CHARACTERISTIC', # 14
-        'CONFIGURATIONS', # 14
-        'DECOMPRESSION', # 14
-        'IMPLEMENTATIONS',#14
-        'INITIALIZATIONS',#14
-        'MULTIPROCESSING',#14
-        'VIRTUALMACHINE', # 14
-        'AUTHORIZATIONS', # 14
-        'PARALLELIZATION',#14
-        'SERIALIZATIONS', # 14
-        'TRANSMISSIONS'   # 14
+        'ADMINISTRATION', 'AUTHENTICATION', 'AUTHORIZATIONS', 'CONFIGURATIONS',
+        'CONSIDERATIONS', 'DISCONNECTIONS', 'DISCRIMINATORY', 'UNQUESTIONABLE',
+        'EXPERIMENTALLY', 'IDENTIFICATION', 'IMPLEMENTATION', 'INTERPRETATION',
+        'INVESTIGATIONS', 'MICROPROCESSOR', 'MULTIPROCESSOR', 'RECONDITIONING',
+        'REPRESENTATIVE', 'SERIALIZATIONS', 'SPECIFICATIONS', 'TRANSFORMATION'
     ],
-
     15: [
-        'AUTHENTICATIONS', # 15
-        'CHARACTERISTICS', # 15
-        'CONFIGURABILITY', # 15
-        'IMPLEMENTATIONAL',# 15
-        'MULTIPROCESSORS', # 15
-        'INITIALIZATIONSS',# 15 (intentionally double-S, Fallout-style)
-        'PARALLELPROCESS', # 15
-        'VIRTUALMACHINES', # 15
-        'AUTHORIZINGKEY',  # 15
-        'SERIALIZINGDATA', # 15
-        'TRANSACTIONLOG',  # 15
-        'ENCRYPTIONBLOCK'  # 15
+        'ADMINISTRATIONS', 'AUTHENTICATIONS', 'CLASSIFICATIONS', 'CONFIGURABILITY',
+        'DISCRIMINATIONS', 'IDENTIFICATIONS', 'INACCESSIBILITY', 'INCOMPATIBILITY',
+        'INSTRUMENTATION', 'INTERPRETATIONS', 'MULTIPROCESSORS', 'PROCRASTINATION',
+        'RECONFIGURATION', 'REPRESENTATIONS', 'RESOURCEFULNESS', 'TECHNOLOGICALLY',
+        'UNCONDITIONALLY', 'OVERCONFIDENTLY'
     ]
 }
+
+
+def _validate_word_lists() -> None:
+    """Fail early if a pool contains a malformed or duplicate entry."""
+    for expected_length, words in WORD_LISTS.items():
+        if len(words) != len(set(words)):
+            raise ValueError(f"Duplicate entry in the {expected_length}-letter word pool")
+        for word in words:
+            if (
+                len(word) != expected_length
+                or not word.isalpha()
+                or word != word.upper()
+            ):
+                raise ValueError(
+                    f"Invalid {expected_length}-letter word pool entry: {word!r}"
+                )
+
+
+_validate_word_lists()
 
 
 # Special characters for bracket sequences
@@ -181,14 +199,14 @@ class HackingGame:
             if length in WORD_LISTS:
                 available_words.extend([w.upper() for w in WORD_LISTS[length]])
         
-        # If still not enough words, add gibberish
+        # Never pad a pool with random gibberish; an undersized list is a data error.
         if len(available_words) < word_count:
-            while len(available_words) < word_count:
-                gibberish_length = random.randint(min_len, max_len)
-                available_words.append(''.join(random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') 
-                                              for _ in range(gibberish_length)))
+            raise ValueError(
+                f"Not enough words for difficulty {self.difficulty}: "
+                f"need {word_count}, found {len(available_words)}"
+            )
         
-        return random.sample(available_words, min(word_count, len(available_words)))
+        return random.sample(available_words, word_count)
 
     def _generate_grid(self) -> List[GridLine]:
         lines = []
